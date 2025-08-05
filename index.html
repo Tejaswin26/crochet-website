@@ -1,0 +1,401 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe0f0 0%, #ffd6e6 100%);
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            margin: 0;
+        }
+        nav {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(183, 124, 124, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            min-height: 180px;
+            border-radius: 0 0 32px 32px;
+            backdrop-filter: blur(8px);
+            transition: box-shadow 0.2s;
+        }
+        nav img {
+            box-shadow: none;
+            border-radius: 0;
+            background: none;
+            width: 1100px;
+            height: 180px;
+            max-width: 99vw;
+            margin: 0 auto;
+            display: block;
+            padding: 0;
+            border: none;
+        }
+        nav .brand-official {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+            color: #fff;
+            background: linear-gradient(90deg, #e7a6b6 0%, #b77c7c 100%);
+            padding: 8px 32px 8px 28px;
+            border-radius: 0;
+            box-shadow: none;
+            display: inline-block;
+            margin-left: 8px;
+            border: none;
+            text-shadow: 0 2px 8px rgba(183,124,124,0.10);
+            transition: none;
+        }
+        .hero {
+            width: 100%;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(120deg, #ffe3ec 60%, #f9c6d1 100%);
+            margin-top: 80px;
+            padding: 60px 0 40px 0;
+            position: relative;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 4px 32px 0 rgba(183,124,124,0.08);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #b77c7c;
+            font-weight: 900;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #a05a6c;
+            margin-bottom: 32px;
+            text-align: center;
+            max-width: 600px;
+        }
+        .hero .cta-btn {
+            background: linear-gradient(90deg, #e7a6b6 0%, #b77c7c 100%);
+            color: #fff;
+            font-size: 1.18rem;
+            font-weight: 700;
+            padding: 14px 38px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 12px rgba(183,124,124,0.13);
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .hero .cta-btn:hover {
+            background: linear-gradient(90deg, #b77c7c 0%, #e7a6b6 100%);
+            box-shadow: 0 4px 24px rgba(183,124,124,0.18);
+        }
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            margin-top: 40px;
+            animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .patterns-title {
+            font-size: 2.1rem;
+            color: #b77c7c;
+            font-weight: 800;
+            margin: 60px 0 32px 0;
+            text-align: center;
+            letter-spacing: 1.5px;
+        }
+        #patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+            gap: 40px;
+        }
+        .pattern-card {
+            background: rgba(255,255,255,0.92);
+            border-radius: 20px;
+            box-shadow: 0 4px 32px 0 rgba(183,124,124,0.13), 0 1.5px 6px 0 rgba(183,124,124,0.08);
+            overflow: hidden;
+            border: 1.5px solid #f9c6d1;
+            transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+            position: relative;
+        }
+        .pattern-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: linear-gradient(90deg, #e7a6b6 0%, #b77c7c 100%);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(183,124,124,0.10);
+            letter-spacing: 1px;
+        }
+        .pattern-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 40px 0 rgba(183,124,124,0.20), 0 2px 12px 0 rgba(183,124,124,0.12);
+        }
+        .pattern-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 2px 8px rgba(183,124,124,0.07);
+        }
+        .card-content {
+            padding: 32px 24px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pattern-card h2 {
+            text-align: center;
+            margin: 0 0 14px 0;
+            font-size: 1.5rem;
+            color: #b77c7c;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .pattern-card p {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            margin: 0 0 18px 0;
+            text-align: center;
+            font-size: 1.08rem;
+            color: #a05a6c;
+        }
+        .pattern-card:hover p {
+            max-height: 200px;
+            opacity: 1;
+        }
+        .pattern-card p::after {
+            content: '...';
+            display: inline;
+        }
+        .pattern-card:hover p::after {
+            content: '';
+        }
+        .pattern-card a {
+            display: block;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #e7a6b6 0%, #b77c7c 100%);
+            padding: 12px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.12rem;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(183,124,124,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .pattern-card a:hover {
+            background: linear-gradient(90deg, #b77c7c 0%, #e7a6b6 100%);
+            box-shadow: 0 4px 16px rgba(183,124,124,0.18);
+        }
+        footer {
+            background: rgba(245, 233, 233, 0.97);
+            text-align: center;
+            padding: 48px 0 32px 0;
+            margin-top: 80px;
+            border-radius: 32px 32px 0 0;
+            box-shadow: 0 -2px 24px rgba(183,124,124,0.10);
+            font-size: 1.12rem;
+            position: relative;
+        }
+        .footer-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #e7a6b6 0%, #b77c7c 100%);
+            border-radius: 2px;
+            margin: 0 auto 24px auto;
+        }
+        .footer-socials {
+            margin-bottom: 18px;
+        }
+        .footer-socials a {
+            color: #b77c7c;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.22rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        .footer-socials a:hover {
+            color: #a05a6c;
+            text-decoration: underline;
+        }
+        .footer-links {
+            margin-top: 18px;
+        }
+        .footer-links a {
+            color: #b77c7c;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #a05a6c;
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            nav {
+                padding: 0 10px;
+            }
+            .card-content {
+                padding: 18px 8px 12px 8px;
+            }
+            .pattern-card img {
+                height: 160px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <title>Crochet by Barxa</title>
+</head>
+
+<body style="background:#fff; font-family:'Lato',sans-serif; color:#333;">
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div style="display:flex; align-items:center; justify-content:center; width:100%; height:180px; position:relative;">
+            <!-- Cart and Profile on the right -->
+            <div style="position:absolute; right:0; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:24px; z-index:2;">
+                <!-- Cart Icon -->
+                <a href="#cart" title="Cart" style="display:inline-flex; align-items:center; padding:8px; border-radius:50%; transition:background 0.2s;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b77c7c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2.5 4h2l2.5 13h11l2.5-8H6.5"/></svg>
+                </a>
+                <!-- Profile Icon -->
+                <a href="#profile" title="Profile" style="display:inline-flex; align-items:center; padding:8px; border-radius:50%; transition:background 0.2s;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b77c7c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8.5" r="4"/>
+                        <path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Centered Logo -->
+            <img src="img/US.png" alt="Crochet by Barxa">
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Handcrafted Crochet, Made With Love</h1>
+        <p>Discover unique, premium-quality crochet products designed to add warmth, color, and style to your life. Each piece is lovingly handmade, blending tradition with modern flair.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="patterns-title">Our Featured Collection</div>
+        <section id="patterns">
+            <!-- Product/Pattern Cards -->
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp1.jpg" alt="Crochet Product 1">
+                <div class="card-content">
+                    <h2>Mesh Tote Bag</h2>
+                    <p>A lightweight, spacious crochet tote perfect for shopping, beach trips, or everyday use. Durable mesh design allows for breathability and stretch, making it both stylish and practical.</p>
+                    <a href="crochetp1.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp2.jpg" alt="Crochet Product 2">
+                <div class="card-content">
+                    <h2>Bikini Top</h2>
+                    <p>Handcrafted crochet bikini top with adjustable straps for a comfortable fit. Soft cotton yarn ensures comfort and style, ideal for summer outings or poolside relaxation.</p>
+                    <a href="crochetp2.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp3.jpg" alt="Crochet Product 3">
+                <div class="card-content">
+                    <h2>Tulip Container</h2>
+                    <p>A charming crochet tulip-shaped container, perfect for storing small items, organizing your space, or adding a touch of floral decor to any room.</p>
+                    <a href="crochetp3.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp4.jpg" alt="Crochet Product 4">
+                <div class="card-content">
+                    <h2>Keychains</h2>
+                    <p>Cute and colorful crochet keychains, each handmade with attention to detail. Great for accessorizing bags, keys, or gifting to friends.</p>
+                    <a href="crochetp4.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp5.jpg" alt="Crochet Product 5">
+                <div class="card-content">
+                    <h2>Gloves</h2>
+                    <p>Cozy crochet gloves designed to keep your hands warm while allowing flexibility. Stylish patterns and soft yarn make them a perfect winter accessory.</p>
+                    <a href="crochetp5.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp6.jpg" alt="Crochet Product 6">
+                <div class="card-content">
+                    <h2>Muffler</h2>
+                    <p>A soft, warm crochet muffler with elegant stitch patterns. Ideal for chilly days, it adds a touch of handmade charm to any outfit.</p>
+                    <a href="crochetp6.html">View More</a>
+                </div>
+            </div>
+            <div class="pattern-card fade-in">
+                <img src="img/crochetp7.jpg" alt="Crochet Product 7">
+                <div class="card-content">
+                    <h2>Hand Warmers</h2>
+                    <p>Handmade crochet hand warmers that slip easily over your hands, providing warmth and comfort. Perfect for cold weather and outdoor activities.</p>
+                    <a href="crochetp7.html">View More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background:#f5e9e9; text-align:center; padding:32px 0; margin-top:60px;">
+        <div class="footer-divider"></div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/crochets_by_barxa/" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        </div>
+        <p style="color:#b77c7c; font-size:1.08rem; font-weight:700;">&copy; 2025 Crochet by Barxa. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About</a> |
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+    </footer>
+    <script>
+        // Fade-in effect on scroll
+        function revealOnScroll() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
+            fadeEls.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight - 60) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
+</body>
+</html>

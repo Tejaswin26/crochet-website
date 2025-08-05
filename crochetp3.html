@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Crochet by Barxa - Product 3</title>
+    <style>
+        body { background:#fff; font-family:'Lato',sans-serif; color:#333; }
+        .gallery { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; margin-top:40px; }
+        .gallery img { width:320px; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); border:1px solid #eee; }
+        .back-link { display:block; margin:32px auto 0 auto; text-align:center; color:#b77c7c; font-weight:600; text-decoration:none; font-size:1.1rem; }
+    </style>
+</head>
+<body>
+    <nav style="width:100%; background:#f5e9e9; box-shadow:0 2px 8px rgba(0,0,0,0.04); display:flex; align-items:center; justify-content:space-between; padding:0 32px; position:relative; min-height:70px;">
+        <div style="display:flex; align-items:center;">
+            <img src="img/Screenshot_2025-08-05_224328-removebg-preview (1).png" alt="Logo" style="width:60px; height:auto; margin-right:16px;">
+            <span style="font-size:2rem; font-weight:700; letter-spacing:2px; color:#b77c7c;">Crochet by Barxa</span>
+        </div>
+        <ul style="list-style:none; display:flex; gap:32px; margin:0; padding:0;">
+            <li><a href="index.html" style="text-decoration:none; color:#b77c7c; font-weight:600;">Home</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center; margin-bottom:32px;">
+        <h1 style="font-size:2.2rem; color:#b77c7c; font-weight:800; letter-spacing:1px; margin-bottom:32px; text-align:center; width:100%; display:block; font-family:'Lato',sans-serif;">Tulip Container</h1>
+            <img src="img/crochetp3.jpg" alt="Tulip Container Main" style="width:380px; height:380px; object-fit:cover; border-radius:18px; box-shadow:0 4px 24px rgba(183,124,124,0.13); display:block; margin:0;">
+            <img src="img/crochetp31.jpg" alt="Tulip Container Extra 1" style="width:380px; height:380px; object-fit:cover; border-radius:18px; box-shadow:0 4px 24px rgba(183,124,124,0.13); display:block; margin:0;">
+        </div>
+        <div style="text-align:center; margin-bottom:24px;">
+            <button id="buyNowBtn3" style="background:linear-gradient(90deg,#e7a6b6 0%,#b77c7c 100%); color:#fff; font-size:1.18rem; font-weight:700; padding:14px 38px; border-radius:10px; border:none; box-shadow:0 2px 12px rgba(183,124,124,0.13); cursor:pointer; transition:background 0.2s, box-shadow 0.2s;">Buy Now</button>
+        </div>
+        <a href="index.html" class="back-link">&#8592; Back to Home</a>
+</main>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    document.getElementById('buyNowBtn3').onclick = function(e){
+        var options = {
+            "key": "rzp_test_YourKeyHere",
+            "amount": "49900",
+            "currency": "INR",
+            "name": "Crochet by Barxa",
+            "description": "Tulip Container",
+            "image": "img/web page nav top img.jpg",
+            "handler": function (response){
+                alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+            },
+            "theme": {"color": "#b77c7c"}
+        };
+        var rzp3 = new Razorpay(options);
+        rzp3.open();
+        e.preventDefault();
+    }
+</script>
+    </main>
+</body>
+</html>
